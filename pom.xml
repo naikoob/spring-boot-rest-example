@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.khoubyari</groupId>
 	<artifactId>spring-boot-rest-example</artifactId>
 	<version>0.5.0</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<description>Example project demonstrating REST APIs implemented using Spring Boot, in-memory database, embedded Tomcat, Swagger, JsonPath, Hamcrest and MockMVC</description>
 
 	<parent>
@@ -17,6 +17,10 @@
 
 	<properties>
 		<start-class>com.khoubyari.example.Application</start-class>
+		<fabric8.version>2.3.4</fabric8.version>
+		<spring.k8s.bom.version>0.2.0.RELEASE</spring.k8s.bom.version>
+		<k8s.client.version>2.4.1</k8s.client.version>
+		<fabric8.maven.plugin.version>3.5.32</fabric8.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -131,6 +135,48 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<addResources>false</addResources>
+				</configuration>
+			</plugin>
+
+			<!-- Openshift/Kubernetes support -->
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>fabric8-maven-plugin</artifactId>
+				<version>${fabric8.maven.plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>resource</goal>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<resources>
+						<labels>
+							<all>
+								<property>
+									<name>app</name>
+									<value>spring-boot-rest-example</value>
+								</property>
+							</all>
+						</labels>
+					</resources>
+					<enricher>
+						<excludes>
+							<exclude>spring-boot-health-check</exclude>
+						</excludes>
+					</enricher>
+					<generator>
+						<includes>
+							<include>spring-boot</include>
+						</includes>
+						<config>
+							<spring-boot>
+								<from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.1</from>
+							</spring-boot>
+						</config>
+					</generator>
 				</configuration>
 			</plugin>
 		</plugins>

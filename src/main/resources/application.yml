@@ -37,21 +37,21 @@ info:
 
 hotel.service:
   name: 'default profile:'
----
-spring:
-  profiles: test
-  h2:
-    console:
-      enabled: true
-
-spring.jpa:
-    hibernate.ddl-auto: create-drop
-
-hotel.service:
-  name: 'test profile:'
-  
-logging:
-  file: boot_example.log
-  org.hibernate: INFO
-
+#---
+#spring:
+#  profiles: test
+#  h2:
+#    console:
+#      enabled: true
+#
+#spring.jpa:
+#    hibernate.ddl-auto: create-drop
+#
+#hotel.service:
+#  name: 'test profile:'
+#  
+#logging:
+#  file: boot_example.log
+#  org.hibernate: INFO
+#
  
