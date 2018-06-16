@@ -1,0 +1,33 @@
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - env:        
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /health
+              port: 8091
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /health
+              port: 8091
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 1
+
+          
