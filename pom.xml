@@ -19,6 +19,11 @@
 		<start-class>com.khoubyari.example.Application</start-class>
 	</properties>
 
+  	<scm>
+    	<connection>scm:git:${SCM_GIT_URL}</connection>
+    	<developerConnection>scm:git:${SCM_GIT_URL}</developerConnection>
+  	</scm>
+
 	<dependencies>
 
 		<dependency>
