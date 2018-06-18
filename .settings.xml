@@ -20,7 +20,7 @@
             <id>corp_repo</id>
             <mirrorOf>*</mirrorOf>
             <name>Corporation repo</name>
-            <url>http://nexus-cicd.svc:8081/repository/maven-public/</url>
+            <url>http://nexus.cicd.svc:8081/repository/maven-public/</url>
         </mirror>
     </mirrors>
 
