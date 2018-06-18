@@ -15,7 +15,7 @@
         </server>
 
         <server>
-            <id>https://github.com</id>
+            <id>github</id>
             <username>${GITHUB_USERNAME}</username>
             <password>${GITHUB_PASSWORD}</password>
         </server>

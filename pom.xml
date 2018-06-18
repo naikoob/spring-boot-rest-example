@@ -17,6 +17,7 @@
 
 	<properties>
 		<start-class>com.khoubyari.example.Application</start-class>
+		 <project.scm.id>github</project.scm.id>
 	</properties>
 
   	<scm>
