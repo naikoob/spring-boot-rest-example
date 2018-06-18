@@ -106,6 +106,14 @@
 			<artifactId>jaxb-api</artifactId>
 			<version>2.3.0</version>
 		</dependency>
+
+		<!-- spring-kubernetes integration -->
+		<dependency>
+			<groupId>io.fabric8</groupId>
+			<artifactId>spring-cloud-kubernetes-core</artifactId>
+			<version>2.3.4</version>
+		</dependency>
+
 	</dependencies>
 
 	<distributionManagement>
