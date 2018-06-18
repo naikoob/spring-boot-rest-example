@@ -68,7 +68,7 @@ public class HotelController extends AbstractRestHandler {
         Hotel hotel = this.hotelService.getHotel(id);
         checkResourceFound(hotel);
         //todo: http://goo.gl/6iNAkz
-        return hotel;
+        return hotel ;
     }
 
     @RequestMapping(value = "/{id}",
