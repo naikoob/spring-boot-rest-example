@@ -2,6 +2,8 @@
 ### This file is in Yaml format but you can also configure spring boot using the traditional
 ### Java properties file format. 
 
+spring.application.name: spring-boot-rest-example
+
 spring.jmx:
    enabled: false
 
