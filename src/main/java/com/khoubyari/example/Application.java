@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import ch.sbb.esta.openshift.gracefullshutdown.GracefulshutdownSpringApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /*
@@ -28,7 +29,8 @@ public class Application extends SpringBootServletInitializer {
     private static final Logger log = LoggerFactory.getLogger(applicationClass);
 
 	public static void main(String[] args) {
-		SpringApplication.run(applicationClass, args);
+        //SpringApplication.run(applicationClass, args);
+        GracefulshutdownSpringApplication.run(applicationClass, args);
 	}
 
     @Override
