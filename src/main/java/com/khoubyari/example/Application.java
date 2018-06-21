@@ -30,7 +30,7 @@ public class Application extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
         //SpringApplication.run(applicationClass, args);
-        GracefulshutdownSpringApplication.run(Application.class, args);
+        GracefulshutdownSpringApplication.run(applicationClass, args);
 	}
 
     @Override
