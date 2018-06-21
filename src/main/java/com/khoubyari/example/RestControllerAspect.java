@@ -18,6 +18,6 @@ public class RestControllerAspect {
 
     @Before("execution(public * com.khoubyari.example.api.rest.*Controller.*(..))")
     public void logBeforeRestCall(JoinPoint pjp) throws Throwable {
-        log.info(":::::AOP Before REST call::::: UPDATED!!! " + pjp);
+        log.info(":::::AOP Before REST call::::: In Bangkok !!! " + pjp);
     }
 }
