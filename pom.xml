@@ -4,7 +4,7 @@
 
 	<groupId>com.khoubyari</groupId>
 	<artifactId>spring-boot-rest-example</artifactId>
-	<version>0.5.7</version>
+	<version>0.5.8-SNAPSHOT</version>
 
 	<packaging>jar</packaging>
 	<description>Example project demonstrating REST APIs implemented using Spring Boot, in-memory database, embedded Tomcat, Swagger, JsonPath, Hamcrest and MockMVC</description>
@@ -23,7 +23,7 @@
 	<scm>
 		<connection>scm:git:${SCM_GIT_URL}</connection>
 		<developerConnection>scm:git:${SCM_GIT_URL}</developerConnection>
-		<tag>spring-boot-rest-example-0.5.7</tag>
+		<tag>spring-boot-rest-example-0.5.1</tag>
 	</scm>
 
 	<dependencies>
