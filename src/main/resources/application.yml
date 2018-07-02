@@ -11,6 +11,10 @@ spring.datasource:
     driverClassName: org.h2.Driver
     url: jdbc:h2:mem:bootexample;MODE=MySQL
 
+spring:
+  jpa:
+    generate-ddl: true
+
 server:
   port: 8080
 
@@ -56,4 +60,16 @@ logging:
   file: boot_example.log
   org.hibernate: INFO
 
+---
+spring:
+  profiles: mysql
+  datasource:
+    url: "jdbc:mysql://localhost/hotels"
+    driver-class-name: com.mysql.jdbc.Driver
+    username:
+    password: 
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL55Dialect
  
